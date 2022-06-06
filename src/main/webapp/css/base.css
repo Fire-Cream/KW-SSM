@@ -1,0 +1,468 @@
+/*nav,
+div,
+button,
+input {
+    border-radius: 0px !important;
+}*/
+
+* {
+    border-radius: 0px !important;
+}
+
+.navbar {
+    margin-bottom: 0px;
+}
+
+.wz-notice {
+    height: 30px;
+    background: #141415;
+    color: #a7a7a7;
+    line-height: 30px;
+}
+
+.wz-notice a {
+    color: #a7a7a7;
+}
+
+.icon-notice {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(../img/ico-comm.png) no-repeat 0px -96px;
+    vertical-align: middle;
+}
+
+.wz-info {
+    height: 100px;
+    background: #0E0E0F;
+}
+
+.wz-info .icon-wzry {
+    display: block;
+    width: 100px;
+    height: 75px;
+    background: url(../img/logo-pvpmall.png) no-repeat;
+    background-size: 100px 75px;
+    text-indent: -9999px;
+    margin-top: 10px;
+}
+
+.i-solgan {
+    display: block;
+    margin: 38px 0 0 10px;
+    width: 172px;
+    height: 34px;
+    background-position: 0 -28px !important;
+    text-indent: -9999em;
+}
+
+.ico-comm {
+    background: url(../img/ico-comm.png) no-repeat;
+}
+
+.wz-nav li a:hover {
+    background: url(../img/ico-comm.png) no-repeat -28px -92px;
+}
+
+.search-box {
+    width: 400px;
+    height: 40px;
+    background: #242424;
+    position: relative;
+    margin-top: 39px;
+    margin-right: 20px;
+}
+
+.search-box input {
+    display: block;
+    height: 40px;
+    width: 300px;
+    border: none;
+    margin-left: 10px;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 14px;
+}
+
+.search-box button {
+    display: block;
+    height: 40px;
+    width: 90px;
+    border: none;
+    background: #fa4f17;
+    color: #fff;
+    font-size: 16px;
+}
+
+.goods-list a, .cat-item-list > div > a {
+    transition: all 0.3s;
+}
+
+.goods-list a:hover, .cat-item-list > div > a:hover {
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.pord-name {
+    width: 100%;
+    line-height: 36px;
+    font-size: 28px;
+    color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.pord-price .pord-dispri {
+    color: #f74f4a;
+    font-size: 30px;
+    line-height: 31px;
+    font-weight: bold;
+}
+
+.pord-orpri {
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 38px;
+    text-decoration: line-through;
+    color: #999;
+}
+
+.pord-detailbox {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px dashed #eee;
+    border-bottom: 1px dashed #eee;
+    font-size: 14px;
+}
+
+.pord-detailbox .pord-sold {
+    width: 310px;
+    color: #999;
+}
+
+.pord-detailbox .pord-totalcom {
+    color: #999;
+}
+
+.pord-num {
+    width: 100%;
+    height: auto;
+}
+
+.product-info label.pt10 {
+    padding-top: 10px;
+}
+
+.product-info .pord-num .num-plus, .product-info .pord-num .num-minus {
+    width: 34px;
+    height: 34px;
+    display: block;
+    text-indent: -9999em;
+    border: 1px solid #ddd;
+}
+
+.product-info .pord-num .pord-stock {
+    font-size: 14px;
+    color: #5e6360;
+    padding-left: 10px;
+    line-height: 34px;
+}
+
+.product-info .pord-num .nummidbtn {
+    width: 58px;
+    height: 34px;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    line-height: 34px;
+    color: #333;
+    display: block;
+    font-size: 14px;
+    cursor: default;
+}
+
+.product-info .pord-num .num-plus .ico-detail {
+    margin: 16px auto;
+    width: 10px;
+    height: 2px;
+    background-position: -2px -2px;
+    display: block;
+}
+
+.product-info .pord-num .num-minus .ico-detail {
+    margin: 12px auto;
+    width: 10px;
+    height: 10px;
+    background-position: -16px -2px;
+    display: block;
+}
+
+.ico-detail {
+    background: url(../img/ico-detail.png) no-repeat;
+}
+
+.product-info .pord-btn {
+    margin-top: 25px;
+}
+
+.product-info .pord-btn .joincart-btn, .group-action .joincart-btn {
+    background: #d63017;
+}
+
+.product-info .pord-btn .buy-btn, .group-action .buy-btn {
+    background: #df371d;
+}
+
+.product-info .pord-btn button {
+    display: block;
+    width: 200px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    border: none;
+    outline: none;
+}
+
+.product-info .pord-btn a {
+    display: block;
+    width: 200px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.product-info .pord-btn .btn-collect, .product-info .pord-btn .btn-collected {
+    margin: 12px 0 0 30px;
+    display: block;
+    width: 84px;
+    height: 28px;
+    line-height: 28px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 14px;
+    color: #888;
+    position: relative;
+    text-indent: 16px;
+}
+
+.product-info .pord-btn .ico-collect {
+    position: absolute;
+    top: 7px;
+    left: 14px;
+    z-index: 2;
+    width: 16px;
+    height: 14px;
+    background-position: -107px -2px;
+}
+
+.ico-detail {
+    background: url(../img/ico-detail.png) no-repeat;
+}
+
+.rg-container {
+    background: url(../img/reg-bg.jpg) no-repeat center top;
+    background-size: cover;
+}
+
+.rg-layout {
+    width: 900px;
+    height: 500px;
+    background-color: white;
+    background-clip: content-box;
+    margin: 50px auto;
+    /*border: 8px solid #EEEEEE;*/
+    border: 8px solid rgba(0, 0, 0, 0.5);
+}
+
+.rg-left > p:first-child {
+    font-size: 24px;
+    color: cornflowerblue;
+}
+
+.rg-left > p:last-child {
+    color: gray;
+}
+
+.rg-right > P > a {
+    text-decoration: none;
+    color: pink;
+    font-size: 16px !important;
+}
+
+.fl {
+    float: left;
+}
+
+.font1 {
+    font-size: 15px;
+    color: white;
+}
+
+.font2 {
+    color: #a6a6a6;
+    font-size: 16px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.pt20 {
+    margin-top: 20px;
+}
+
+.mt80 {
+    margin-top: 80px;
+}
+
+.ml30 {
+    margin-left: 30px;
+}
+
+.ml42 {
+    margin-left: 42px;
+}
+
+.buyimg {
+    width: 88px;
+    height: 88px;
+}
+
+.table > tbody > tr > td {
+    line-height: 88px;
+}
+
+/* 对bootstrap默认样式的修改 */
+
+.thumbnail {
+    padding: 1px !important;
+    text-decoration: none !important;
+}
+
+.thumbnail:hover {
+    border: 1px solid #ddd !important;
+}
+
+.item-name {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #444;
+}
+
+.item-price {
+    line-height: 25px;
+    font-size: 16px;
+    color: #f7545f;
+}
+
+/*底部 服务样式*/
+
+.fuwubar {
+    margin-top: 10px;
+}
+
+.fw {
+    display: inline-block;
+    /*设置为 行内块元素  可以设置高和宽   不独占一行*/
+    height: 40px;
+    width: 40px;
+    background: red;
+    line-height: 40px;
+    /*文字居中   让高度 和行高一致*/
+    text-align: center;
+    /*水平居中*/
+    border-radius: 50% !important;
+    /*让正方形变为一个球*/
+    color: #F7F7F7;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+/*帮助栏 设计*/
+
+.helperbar {
+    background-color: #F6F6F6;
+    margin-top: 20px;
+    padding: 30px 0px 20px 0px;
+    /*上  右 下 左 */
+}
+
+.helperbar a {
+    text-indent: 10px;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    line-height: 28px;
+}
+
+.helperbar h3 {
+    margin: 0;
+}
+
+.helperbar h3 a {
+    text-indent: 0px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #222;
+}
+
+/*底部链接 样式*/
+
+.bottomlink ul {
+    /*height: 40px;*/
+    text-align: center;
+    /*行内块元素水平居中居中*/
+    line-height: 40px;
+    /*文字 垂直居中*/
+    border-top: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    margin-top: 25px;
+}
+
+.bottomlink ul li a {
+    color: #666;
+}
+
+/*底部栏样式*/
+
+.foot {
+    height: 57px;
+    line-height: 57px;
+}
+
+.foot1 {
+    border-left: 1px solid #e9e9e9;
+}
+
+/* 购物车 */
+
+.cart-item-price {
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.cart-money {
+    color: #f74a4a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.footer > .container-fulid > .row {
+
+    margin-left: 0;
+    margin-right: 0;
+}

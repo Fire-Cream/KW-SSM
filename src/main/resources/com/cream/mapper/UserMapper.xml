@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cream.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.cream.domain.User">
+    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+  </resultMap>
+  <select id="loginUser" resultMap="BaseResultMap">
+    SELECT * FROM USER WHERE username =#{username} AND PASSWORD = #{password};
+  </select>
+  <insert id="registerUser">
+    INSERT INTO user(username,password,email,name,telephone) VALUES (#{username},#{password},#{email},#{name},#{telephone});
+  </insert>
+  <select id="existUser" resultMap="BaseResultMap">
+    SELECT * FROM USER WHERE username =#{username};
+  </select>
+</mapper>

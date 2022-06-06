@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cream.mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.cream.domain.Orders">
+    <id column="oid" jdbcType="VARCHAR" property="oid" />
+    <result column="ordertime" jdbcType="TIMESTAMP" property="orderTime" />
+    <result column="total" jdbcType="DOUBLE" property="total" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    <collection property="user" ofType="com.cream.domain.User">
+      <id column="uid" jdbcType="INTEGER" property="uid" />
+      <result column="username" jdbcType="VARCHAR" property="username" />
+      <result column="password" jdbcType="VARCHAR" property="password" />
+      <result column="name" jdbcType="VARCHAR" property="name" />
+      <result column="email" jdbcType="VARCHAR" property="email" />
+      <result column="telephone" jdbcType="VARCHAR" property="telephone" />
+    </collection>
+  </resultMap>
+
+  <resultMap id="Base2ResultMap" type="com.cream.domain.OrderItem">
+    <id column="itemid" jdbcType="VARCHAR" property="itemid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
+    <collection property="item" ofType="com.cream.domain.Item">
+      <id column="id" jdbcType="INTEGER" property="id" />
+      <result column="name" jdbcType="VARCHAR" property="name" />
+      <result column="market_price" jdbcType="DOUBLE" property="marketPrice" />
+      <result column="shop_price" jdbcType="DOUBLE" property="shopPrice" />
+      <result column="num" jdbcType="INTEGER" property="num" />
+      <result column="image" jdbcType="VARCHAR" property="image" />
+      <result column="idesc" jdbcType="VARCHAR" property="idesc" />
+      <result column="iflag" jdbcType="TINYINT" property="iflag" />
+      <result column="status" jdbcType="TINYINT" property="status" />
+      <result column="created" jdbcType="TIMESTAMP" property="created" />
+      <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+      <result column="cid" jdbcType="INTEGER" property="cid" />
+    </collection>
+  </resultMap>
+  <!-- 生成订单信息 -->
+  <insert id="insertOrder">
+    INSERT INTO orders VALUE(#{oid},#{orderTime},#{total},#{state},#{address},#{telephone},#{name},#{user.uid})
+  </insert>
+  <!-- 生成订单项信息 -->
+  <insert id="insertOrderItem">
+    INSERT INTO order_item VALUE(#{itemid},#{count},#{subtotal},#{item.id},#{order.oid})
+  </insert>
+  <!-- 添加订单信息 -->
+  <insert id="addOrderMsg">
+    UPDATE orders set address=#{address},name=#{name},telephone=#{telephone} WHERE oid=#{oid}
+  </insert>
+  <!-- 获取订单信息 -->
+  <select id="selectByOid" resultMap="BaseResultMap">
+    SELECT * FROM orders WHERE oid = #{oid}
+  </select>
+  <!-- 修改订单状态 -->
+  <update id="changeState">
+    UPDATE orders set state=#{state} WHERE oid=#{oid}
+  </update>
+  <!-- 根据uid获取全部订单 -->
+  <select id="selectOrdersByUid" resultMap="BaseResultMap">
+    SELECT o.oid,o.state,o.total,o.address,o.name,o.telephone,o.ordertime
+    FROM orders o WHERE uid = #{uid} order by ordertime desc
+  </select>
+  <!-- 根据oid获取全部订单项 -->
+  <select id="selectOrderItemsByOid" resultMap="Base2ResultMap">
+    SELECT oi.count,oi.subtotal,i.image,i.name,i.shop_price
+    FROM order_item oi,item i WHERE oi.id=i.id AND oid= #{oid}
+  </select>
+</mapper>

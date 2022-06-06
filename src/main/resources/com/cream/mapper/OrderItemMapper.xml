@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cream.mapper.OrderItemMapper">
+  <resultMap id="BaseResultMap" type="com.cream.domain.OrderItem">
+    <id column="itemid" jdbcType="VARCHAR" property="itemid" />
+    <result column="count" jdbcType="INTEGER" property="count" />
+    <result column="subtotal" jdbcType="DOUBLE" property="subtotal" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="oid" jdbcType="VARCHAR" property="oid" />
+  </resultMap>
+</mapper>

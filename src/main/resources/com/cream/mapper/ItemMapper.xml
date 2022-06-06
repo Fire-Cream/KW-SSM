@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cream.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.cream.domain.Item">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="market_price" jdbcType="DOUBLE" property="marketPrice" />
+    <result column="shop_price" jdbcType="DOUBLE" property="shopPrice" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="idesc" jdbcType="VARCHAR" property="idesc" />
+    <result column="iflag" jdbcType="TINYINT" property="iflag" />
+    <result column="status" jdbcType="TINYINT" property="status" />
+    <result column="created" jdbcType="TIMESTAMP" property="created" />
+    <result column="updated" jdbcType="TIMESTAMP" property="updated" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+  </resultMap>
+
+
+  <select id="selectItemsByIflag" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM item WHERE iflag = #{iflag} AND status = 1 ORDER BY created DESC LIMIT 6
+  </select>
+
+  <select id="selectAllByCid" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM item WHERE cid = #{cid}
+  </select>
+
+  <select id="selectAllByName" parameterType="String" resultMap="BaseResultMap">
+    SELECT * FROM item WHERE name like #{name}
+  </select>
+
+  <select id="showItem" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM item where id = #{id}
+  </select>
+
+</mapper>
