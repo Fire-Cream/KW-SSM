@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="KW-SSM:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>KW-SSM</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="KW-SSM.war">
+      <element id="artifact" artifact-name="KW-SSM:war exploded" />
+    </root>
+  </artifact>
+</component>
